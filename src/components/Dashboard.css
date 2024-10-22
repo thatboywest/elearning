@@ -1,0 +1,39 @@
+/* Sidebar (left) */
+.sidebar {
+    height: 100vh; /* Full viewport height */
+    position: fixed; /* Sidebar stays fixed */
+    left: 0;
+    top: 0;
+    width: 16.66%; /* Same as 2 columns in Bulma (1/6) */
+    background-color: #f4f4f4;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1); /* Slight shadow for sidebar separation */
+  }
+  
+  .menu-list li {
+    margin-bottom: 10px;
+  }
+  
+  .menu-list button {
+    border-radius: 20px; /* Rounded buttons */
+    padding: 10px; /* Add more padding for better spacing */
+  }
+  
+  .is-active {
+    background-color: #3273dc; /* Highlight the active button */
+    color: white;
+  }
+  
+  .main-content {
+    margin-left: 16.66%; /* Offset by sidebar width */
+    padding: 20px;
+    height: 100vh;
+    overflow-y: auto; /* Make the main content scrollable */
+    background-color: #fff;
+  }
+  
+  /* Remove Bulma box shadow */
+  .box {
+    box-shadow: none;
+  }
+  
