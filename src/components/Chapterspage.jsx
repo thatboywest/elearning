@@ -14,7 +14,7 @@ const ChaptersPage = () => {
       try {
         const token = localStorage.getItem('authToken'); 
 
-        const response = await fetch(`http://localhost:3000/api/chapters?course=${courseId}`, {
+        const response = await fetch(`https://elearningbackend-obpd.onrender.com/api/chapters?course=${courseId}`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',

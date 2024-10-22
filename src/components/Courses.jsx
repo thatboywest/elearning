@@ -10,7 +10,7 @@ const Courses = () => {
   React.useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const response = await fetch('http://localhost:3000/api/courses');
+        const response = await fetch('https://elearningbackend-obpd.onrender.com/api/courses');
         const data = await response.json();
         setCourses(data);
         setLoading(false);

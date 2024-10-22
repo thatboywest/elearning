@@ -48,7 +48,7 @@ const CreateTopic = () => {
 
     try {
       // Step 1: Create the course first
-      const courseResponse = await axios.post('http://localhost:3000/api/courses', { title: courseTitle.trim() });
+      const courseResponse = await axios.post('https://elearningbackend-obpd.onrender.com/api/courses', { title: courseTitle.trim() });
       const courseId = courseResponse.data._id;
 
       // Step 2: Create chapters and link them to the created course
@@ -65,7 +65,7 @@ const CreateTopic = () => {
           formData.append('resource', chapter.resourceFile);
         }
 
-        return axios.post('http://localhost:3000/api/chapters', formData, {
+        return axios.post('https://elearningbackend-obpd.onrender.com/api/chapters', formData, {
           headers: {
             'Content-Type': 'multipart/form-data',
           },

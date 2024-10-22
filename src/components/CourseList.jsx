@@ -15,7 +15,7 @@ const CoursesList = () => {
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/api/courses');
+        const response = await axios.get('https://elearningbackend-obpd.onrender.com/api/courses');
         setCourses(response.data);
       } catch (error) {
         console.error('Error fetching courses:', error);
@@ -53,7 +53,7 @@ const CoursesList = () => {
     formData.append('courseId', selectedCourse._id);
 
     try {
-      const response = await axios.post('http://localhost:3000/api/chapters', formData, {
+      const response = await axios.post('https://elearningbackend-obpd.onrender.com/api/chapters', formData, {
         headers: { 'Content-Type': 'multipart/form-data' }
       });
       alert('Chapter added successfully!');
@@ -79,11 +79,11 @@ const CoursesList = () => {
 
     try {
       if (type === 'course') {
-        await axios.delete(`http://localhost:3000/api/courses/${target._id}`);
+        await axios.delete(`https://elearningbackend-obpd.onrender.com/api/courses/${target._id}`);
         setCourses(courses.filter((course) => course._id !== target._id));
         setSelectedCourse(null);
       } else if (type === 'chapter') {
-        await axios.delete(`http://localhost:3000/api/chapters/${target._id}`);
+        await axios.delete(`https://elearningbackend-obpd.onrender.com/api/chapters/${target._id}`);
         setSelectedCourse({
           ...selectedCourse,
           chapters: selectedCourse.chapters.filter((chapter) => chapter._id !== target._id)
